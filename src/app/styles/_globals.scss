@@ -1,0 +1,80 @@
+@use 'helpers' as *;
+
+#root {
+	display: contents;
+}
+
+body {
+	@include fluid-text(18, 14);
+
+	font-family: var(--font-family-primary);
+	font-weight: 400;
+	letter-spacing: 0.03em;
+
+	color: var(--color-gray);
+	background-color: var(--color-dark);
+}
+
+h1, .h1 {
+	@include fluid-text(70, 23);
+
+	font-family: var(--font-family-secondary);
+	font-weight: normal;
+	letter-spacing: -0.03em;
+}
+
+h2, .h2 {
+	@include fluid-text(58, 27);
+}
+
+h3, .h3 {
+	@include fluid-text(45, 24);
+}
+
+h4, .h4 {
+	@include fluid-text(32, 21);
+}
+
+h5, .h5 {
+	@include fluid-text(26, 18);
+}
+
+h6, .h6 {
+	@include fluid-text(22, 15);
+}
+
+
+
+p {
+	@include color-gradient;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+	transition-duration: var(--transition-duration);
+}
+
+a {
+	color: var(--color-light);
+	text-decoration: none;
+	opacity: 80%;
+
+	@include hover {
+		opacity: 100%;
+	}
+}
+
+button {
+	border: none;
+}
+
+:focus-visible {
+	outline: rem(1) solid var(--color-light);
+	outline-offset: rem(3);
+	transition-duration: 0s !important;
+}

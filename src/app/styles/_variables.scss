@@ -1,0 +1,26 @@
+@use 'helpers' as *;
+
+:root {
+	--color-main: #FF3E68;
+	--color-dark: #090909;
+	--color-light: #FFFFFF;
+	--color-gray: #909090;
+
+	--color-light-link: #FFFFFF85;
+	--color-nav-button: #FFFFFF15;
+
+	--color-light-gradient: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.25) 100%);
+
+	--font-family-primary: 'Inter', sans-serif;
+	--font-family-secondary: 'Floripa', sans-serif;
+	--font-family-prime: 'Akira Expanded', sans-serif;
+
+	--container-big-width: #{rem(1740)};
+	--container-small-width: #{rem(30)};
+
+	--transition-duration: 0.2s;
+
+	@include laptop {
+		--container-big-width: #{rem(1256)};
+	}
+}

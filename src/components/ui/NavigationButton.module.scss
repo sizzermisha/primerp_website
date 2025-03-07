@@ -1,0 +1,32 @@
+@use '/src/app/styles/helpers' as *;
+
+.NavigationButton {
+	@include flex-center;
+
+	column-gap: rem(6);
+
+	background-color: var(--color-nav-button);
+	border-radius: fluid(13, 9);
+	backdrop-filter: blur(#{rem(35)});
+
+	text-transform: uppercase;
+	font-family: var(--font-family-primary);
+	font-size: rem(15);
+	font-weight: 600;
+
+	padding: rem(25) rem(15);
+	color: var(--color-light-link);
+
+	@include hover {
+		background-color: var(--color-main);
+		color: var(--color-light);
+	}
+
+	@include laptop {
+		font-size: rem(14);
+	}
+
+	@include mobile {
+		padding-block: rem(12);
+	}
+}
