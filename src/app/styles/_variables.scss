@@ -8,19 +8,22 @@
 
 	--color-light-link: #FFFFFF85;
 	--color-nav-button: #FFFFFF15;
+	--color-link-footer: #383838;
+
 
 	--color-light-gradient: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.25) 100%);
+	--color-title-gradient: linear-gradient(90deg, #fff 0%, #d1d1d1 100%);
 
 	--font-family-primary: 'Inter', sans-serif;
 	--font-family-secondary: 'Floripa', sans-serif;
 	--font-family-prime: 'Akira Expanded', sans-serif;
 
-	--container-big-width: #{rem(1740)};
+	--container-big-width: #{rem(1540)};
 	--container-small-width: #{rem(30)};
 
 	--transition-duration: 0.2s;
 
 	@include laptop {
-		--container-big-width: #{rem(1256)};
+		--container-big-width: #{rem(1156)};
 	}
 }

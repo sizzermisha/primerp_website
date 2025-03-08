@@ -1,0 +1,73 @@
+@use '/src/app/styles/helpers' as *;
+
+.Header {
+	padding-block: rem(35);
+	
+	&__logo {
+		min-width: rem(169);
+		padding: rem(5);
+
+		@include tablet {
+			min-width: rem(236);
+		}
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: rem(20);
+
+		@include tablet {
+			flex-direction: column;
+			row-gap: rem(5);
+			justify-content: center;
+		}
+	}
+
+	&__navigation {
+		display: flex;
+		column-gap: rem(50);
+
+		@include tablet {
+			display: none !important;
+		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: rem(41);
+	}
+
+	&__item {
+		font-size: fluid(16, 8);
+		font-weight: 600;
+		color: var(--color-light);
+		text-align: center;
+		white-space: nowrap;
+		text-transform: uppercase;
+
+		&_isActive {
+			font-weight: 800;
+			position: relative;
+			pointer-events: none;
+		}
+		&_isActive::after {
+			content: '';
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 70%;
+    	height: 120%;
+    	border-bottom: rem(2) solid var(--color-light);
+
+		}
+	}
+
+	&__listButton {
+		display: flex;
+		column-gap: rem(12);
+	}
+}

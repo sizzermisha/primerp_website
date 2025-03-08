@@ -11,22 +11,24 @@
 
 	text-transform: uppercase;
 	font-family: var(--font-family-primary);
-	font-size: rem(15);
+	font-size: fluid(16, 14);
 	font-weight: 600;
+	white-space: nowrap;
 
-	padding: rem(25) rem(15);
+	padding: rem(15);
 	color: var(--color-light-link);
+
+	&__image {
+		min-width: rem(16);
+	}
 
 	@include hover {
 		background-color: var(--color-main);
 		color: var(--color-light);
 	}
 
-	@include laptop {
-		font-size: rem(14);
-	}
-
-	@include mobile {
-		padding-block: rem(12);
+	@include tablet {
+		min-width: rem(236);
+		padding-block: rem(11);
 	}
 }
