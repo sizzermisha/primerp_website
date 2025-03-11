@@ -5,10 +5,12 @@
 	min-height: calc(#{rem(310)} + #{rem(69)});
 	padding-block: rem(69);
 	align-content: end;
+	justify-content: center;
 
 	&__inner {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+		align-content: end;
 
 		@include tablet-above {
 			padding-block: rem(20);

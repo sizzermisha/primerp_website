@@ -4,3 +4,12 @@
 @use 'styles/utils';
 @use 'styles/globals';
 
+button {
+	max-width: fit-content;
+	height: fit-content;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}

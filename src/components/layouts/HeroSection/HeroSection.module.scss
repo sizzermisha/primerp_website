@@ -1,0 +1,102 @@
+@use '/src/app/styles/helpers' as *;
+
+main {
+	display: contents;
+}
+
+.Hero {
+	display: flex;
+	justify-content: center;
+
+	padding-bottom: rem(30);
+
+	background-image: 
+		linear-gradient(0deg, #{var(--color-dark)} 25%, rgba(9, 9, 9, 0) 70%),
+		url('/src/assets/images/persons_and_car.jpg');
+	background-clip: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&__inner {
+		margin-top: fluid(467, 242);
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+
+		align-items: center;
+		justify-items: end;
+
+		@include laptop {
+			display: flex;
+			flex-direction: column;
+			row-gap: fluid(40, 20);
+		}
+
+		@include tablet {
+			padding-top: rem(60);
+		}
+
+		@include mobile {
+			padding-top: rem(150);
+		}
+	}
+
+	&__header {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(27);
+		z-index: 1;
+
+		@include laptop {
+			align-items: center;
+			justify-content: center;
+			padding-block: 0;
+			order: 2;
+		}
+
+		@include tablet {
+			row-gap: rem(7);
+		}
+	}
+
+	&__title {
+		color: var(--color-light);
+		line-height: 100%;
+
+		@include laptop-above {
+			max-width: rem(900);
+		}
+		
+		@include laptop {
+			padding-inline: fluid(350, 30);
+			text-align: center;
+		}
+	}
+
+	&__description {
+		@include color-gradient;
+
+		display: flex;
+
+		@include fluid-text(20, 10);
+
+		@include laptop {
+			padding-inline: fluid(350, 30);
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	@include desktop {
+		background-position: center 0%;
+	}
+
+	@include tablet {
+		background-image:
+			linear-gradient(0deg, #{var(--color-dark)} 20%, rgba(9, 9, 9, 0) 78%),
+			url('/src/assets/images/background_tablet.jpg')
+		;
+		background-position: center 0%;
+	}
+}

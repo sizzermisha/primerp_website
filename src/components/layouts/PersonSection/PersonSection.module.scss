@@ -1,0 +1,79 @@
+@use '/src/app/styles/helpers' as *;
+
+.PersonSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: rem(55);
+
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		row-gap: rem(27);
+
+		@include tablet {
+			row-gap: rem(0);
+		}
+	}
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		color: var(--color-light);
+		text-align: center;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+	&__description {
+		@include color-gradient;
+
+		text-align: center;
+
+		font-size: rem(14);
+
+		@include tablet {
+			@include visually-hidden;
+		}
+	}
+
+	&__link {
+		opacity: 1;
+	}
+
+	&__listCharacter {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: rem(10);
+
+		padding: rem(15);
+
+		@include tablet {
+			display: grid;
+			grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+			gap: rem(15);
+		}
+		
+		@include mobile {
+			display: flex;
+			flex-direction: column;
+			row-gap: rem(6);
+		}
+	}
+	
+
+	@include laptop {
+		padding-top: rem(55);
+	}
+}

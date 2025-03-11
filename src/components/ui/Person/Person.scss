@@ -1,0 +1,30 @@
+@use '/src/app/styles/helpers' as *;
+
+#person_1 {
+	object-position: rem(10) center;
+
+	@include tablet {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+}
+
+#person_2 {
+	@include laptop {
+		object-position: rem(-20) center;
+	}
+
+	@include tablet {
+		left: rem(15);
+	}
+}
+
+#person_3 {
+	object-position: rem(5) center;
+	
+	@include laptop {
+		object-position: center center;
+	}
+}

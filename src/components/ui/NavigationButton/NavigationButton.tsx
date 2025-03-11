@@ -1,16 +1,8 @@
 // import { Link } from "react-router-dom";
+import { Button } from '../../../models/declare/button';
 import styles from './NavigationButton.module.scss';
-import { MouseEventHandler } from "react";
 
-export type INavigationButton = {
-	icon: string | null;
-	name: string;
-	linkButton?: string | null;
-	onClick?: MouseEventHandler<HTMLButtonElement>;
-	
-}
-
-const NavigationButton: React.FC<INavigationButton> = ({ icon, name, linkButton, onClick }) => { 
+const NavigationButton: React.FC<Button> = ({ icon, name, onClick }) => { 
 
 	return (
 		<button onClick={onClick} className={styles.NavigationButton}>

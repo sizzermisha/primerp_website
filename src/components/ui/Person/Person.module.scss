@@ -1,0 +1,219 @@
+@use '/src/app/styles/helpers' as *;
+
+
+.Person {
+	display: flex;
+	justify-content: center;
+
+	transform: skewX(-3deg);
+	overflow: hidden;
+	border-radius: rem(17);
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+	
+		background: url('/src/assets/images/bg_role_person.jpg');
+		background-repeat: no-repeat;
+		background-position: calc(var(--count-index) * 16.67%) center;
+		border-radius: rem(17);
+
+		filter: grayscale(1);
+	
+		position: relative;
+
+		align-items: center;
+		justify-content: end;
+
+
+		@include tablet-above {
+			@include hover {
+				background: url('/src/assets/images/bg_role_person.jpg');
+				background-repeat: no-repeat;
+				background-position: calc(var(--count-index) * 16.67%) center;
+	
+				z-index: 2;
+	
+				// outline: rem(3) solid var(--color-main);
+				// outline-offset: rem(-5);
+				// transition: 200ms ease-in outline;
+	
+				filter: grayscale(0);
+				transition: 200ms ease-in transform;
+	
+				.Person__info {
+					opacity: 1;
+	
+					animation: positionText var(--transition-duration);
+					bottom: 0;
+	
+					@keyframes positionText {
+						0% {
+							bottom: rem(-100);
+						} 100% {
+							bottom: rem(0);
+						}
+					}
+				}
+	
+				.Person__image {
+					transform: scale(1.1);
+					transition: var(--transition-duration) ease-out transform;
+				}
+	
+				&::after {
+					content: '';
+					width: 100%;
+					height: 100%;
+					
+					background: linear-gradient(0deg, #ff3e68 28.5%, rgba(255, 62, 104, 0) 65%);
+					border-radius: rem(17);
+					
+					position: absolute;
+					
+					z-index: 2;
+					transition: none;
+	
+					animation: positionBg var(--transition-duration);
+	
+					@include tablet {
+						border-radius: rem(5);
+					}
+	
+					@keyframes positionBg {
+						0% {
+							top: rem(50);
+						} 100% {
+							top: rem(0);
+						}
+					}
+				}
+			}
+		}
+
+		@include tablet {
+			filter: grayscale(0);
+
+			height: fluid(90, 70);
+			border-radius: rem(5);
+			flex-direction: row;
+			justify-content: space-between;
+			background: 
+				linear-gradient(306deg, rgba(9,9,9,0.65) 0%, rgba(17, 17, 17, 0.9) 57%);
+			background-position: center calc(var(--count-index) * 16.67%);
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&__image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: fluid(655, 125);
+		height: fluid(355, 125);
+		object-fit: cover;
+		object-position: center center;
+		z-index: -1;
+		border-radius: rem(17);
+
+		@include tablet {
+			width: rem(125);
+			height: rem(125);
+			object-fit: contain;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&__container {
+		position: relative;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include tablet {
+			min-width: rem(90);
+
+			width: rem(90);
+			height: rem(90);
+		}
+	}
+
+	&__info {
+		position: absolute;
+		bottom: rem(-100);
+		margin-bottom: rem(20);
+		opacity: 1;
+		z-index: 3;
+
+		@include laptop-above {
+			margin-bottom: rem(40);
+		}
+
+		@include tablet {
+			display: flex;
+			flex-direction: column;
+			max-width: rem(188);
+
+			position: relative;
+			bottom: 0;
+			margin-bottom: 0;
+
+			padding-inline: rem(10);
+			row-gap: rem(3);
+		}
+	}
+
+	&__description {
+		color: var(--color-light);
+		opacity: 85%;
+		
+		font-size: fluid(15, 4);
+		font-weight: 500;
+		
+		text-transform: uppercase;
+		white-space: nowrap;
+		letter-spacing: -0.05em;
+		line-height: 92%;
+
+		@include tablet {
+			@include color-gradient;
+
+			font-weight: 400;
+			line-height: 120%;
+			white-space: wrap;
+			text-transform: none;
+			order: 2;
+			opacity: 1;
+		}
+
+		@include mobile {
+			font-size: rem(6);
+		}
+	}
+
+	&__textName {
+		color: var(--color-light);
+		font-size: fluid(20, 6);
+		letter-spacing: -0.05em;
+		line-height: 92%;
+		font-weight: 900;
+		text-transform: uppercase;
+
+		@include tablet {
+			order: 1;
+		}
+
+		@include mobile {
+			font-size: rem(8);
+		}
+	}
+
+	@include tablet {
+		border-radius: rem(5);
+		transform: skewX(-1.5deg);
+	}
+}

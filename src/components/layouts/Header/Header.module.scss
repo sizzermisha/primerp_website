@@ -1,6 +1,14 @@
 @use '/src/app/styles/helpers' as *;
 
 .Header {
+	display: flex;
+	justify-content: center;
+
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+
 	padding-block: rem(35);
 	
 	&__logo {
@@ -13,6 +21,8 @@
 	}
 
 	&__inner {
+		width: 100%;
+
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

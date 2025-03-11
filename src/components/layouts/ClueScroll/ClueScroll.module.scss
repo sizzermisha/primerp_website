@@ -1,0 +1,84 @@
+@use '/src/app/styles/helpers' as *;
+
+.ClueScroll {
+	--iconSize: #{rem(37)};
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: fluid(15, 5);
+
+	padding-block: fluid(30, 5);
+
+	&__text {
+		@include color-gradient;
+		
+		display: flex;
+		justify-content: center;
+		flex-wrap: nowrap;
+		white-space: nowrap;
+
+		font-size: rem(16);
+		font-weight: 400;
+		letter-spacing: -0.06em;
+		text-transform: uppercase;
+		opacity: 35%;
+
+		@include mobile {
+			font-size: rem(10);
+		}
+	}
+
+	&__gamepad {
+		max-width: var(--iconSize);
+		width: var(--iconSize);
+		height: var(--iconSize);
+
+		@include tablet {
+			--iconSize: #{rem(17)};
+		}
+	}
+	
+	&__imageContainer {
+		max-width: var(--iconSize);
+		width: var(--iconSize);
+		height: var(--iconSize);
+
+		@include tablet {
+			--iconSize: #{rem(17)};
+		}
+
+		position: relative;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border-radius: 50%;
+		border: rem(1) solid #ffffff15;
+		z-index: 1;
+	}
+
+	&__imageContainer::before {
+		content: '';
+		position: absolute;
+
+		width: calc(var(--iconSize) * 1.25);
+		height: calc(var(--iconSize) * 1.25);
+
+		border-radius: 50%;
+		border: rem(1) solid #ffffff10;
+		z-index: 2;
+	}
+	&__imageContainer::after {
+		content: '';
+		position: absolute;
+
+		width: calc(var(--iconSize) * 1.5);
+		height: calc(var(--iconSize) * 1.5);
+
+		border-radius: 50%;
+		border: rem(1) solid #ffffff05;
+		z-index: 3;
+	}
+}

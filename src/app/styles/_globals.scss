@@ -16,7 +16,7 @@ body {
 }
 
 h1, .h1 {
-	@include fluid-text(70, 23);
+	@include fluid-text(70, 18);
 
 	font-family: var(--font-family-secondary);
 	font-weight: normal;
@@ -45,9 +45,6 @@ h6, .h6 {
 
 
 
-p {
-	@include color-gradient;
-}
 
 a,
 button,

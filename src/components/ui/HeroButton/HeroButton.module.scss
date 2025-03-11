@@ -1,0 +1,42 @@
+@use '/src/app/styles/helpers' as *;
+
+.HeroButton {
+	--colorActive: var(--color-main);
+	
+	@include fluid-text(22, 7);
+
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	padding: fluid(28, 15) fluid(25, 7);
+	column-gap: fluid(12, 5);
+	border-radius: rem(85);
+
+	font-weight: 600;
+	color: var(--color-light);
+	background-color: var(--colorActive);
+	text-transform: uppercase;
+
+	box-shadow: 
+		0 0 rem(45) 0 var(--colorActive), 
+		inset 0 0 rem(14) 0 rgba(255, 255, 255, 0.65), 
+		0 0 rem(35) 0 rgba(0, 0, 0, 0.65);
+
+	&__icon {
+		min-width: rem(8);
+
+		width: fluid(33, 8);
+		height: fluid(33, 8);
+	}
+
+	@include mobile {
+		padding-block: rem(12);
+	}
+
+	@include hover {
+		--colorActive: var(--color-light);
+
+		color: var(--color-dark);
+	}
+}
