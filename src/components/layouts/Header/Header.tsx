@@ -3,9 +3,9 @@ import NavigationButton from '../../ui/NavigationButton/NavigationButton';
 import styles from './Header.module.scss';
 
 export default function Header() {
-    const handleChangeLanguage = () => {
-        console.log('Clicked');
-    };
+    // const handleChangeLanguage = () => {
+    //     console.log('Clicked');
+    // };
 
     const handleMenuMobile = () => {
         console.log('Clicked');
