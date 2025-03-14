@@ -8,4 +8,5 @@ export interface WindowSizeContext {
 	tablet: number;
 	laptop: number;
 	desktop: number;
+	mobile_s: number;
 }

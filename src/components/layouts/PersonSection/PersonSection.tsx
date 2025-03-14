@@ -13,7 +13,7 @@ const PersonSection: React.FC = () => {
 					<p className={styles.PersonSection__description}>Нажми на любую роль чтобы получить к её описанию!</p>
 				</header>
 
-				<ul className={styles.PersonSection__listCharacter + ' container'}>
+				<ul className={styles.PersonSection__listCharacter}>
 					{dataPerson.map((item, value) => (
 						<li key={`personSection_person_${value}`}>
 								<Link to='#'>

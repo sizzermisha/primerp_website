@@ -1,0 +1,40 @@
+@use '/src/app/styles/helpers' as *;
+
+.Button {
+	display: inline-flex;
+	font-size: rem(16);
+	font-weight: 600;
+	letter-spacing: -0.06em;
+	
+	padding: rem(17) rem(37);
+
+	text-align: center;
+	text-transform: uppercase;
+
+	justify-content: center;
+	align-items: center;
+	line-height: 95%;
+	
+	border: none;
+	background-color: var(--color-light);
+	border-radius: rem(11);
+	color: var(--color-dark);
+	
+	@include hover {
+		background-color: var(--color-main);
+		color: var(--color-light);
+		box-shadow: 0 0 rem(54) 0 var(--color-main);
+	}
+
+	@include mobile {
+		border-radius: rem(7);
+		font-size: rem(10);
+		padding: rem(13) rem(54);
+		letter-spacing: -0.05em;
+
+		@include hover {
+			background-color: var(--color-dark);
+			box-shadow: none;
+		}
+	}
+}

@@ -1,0 +1,146 @@
+@use '/src/app/styles/helpers' as *;
+
+.SocialSection {
+	margin-top: rem(50);
+	&__inner {
+		padding-block: rem(25);
+	}
+
+	&__list {
+		display: grid;
+		column-gap: rem(24);
+
+		grid-template-columns: repeat(4, 1fr);
+
+		@include laptop {
+			grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+			gap: rem(20);
+		}
+
+		@include mobile {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__link {
+		max-width: rem(370);
+
+		@include flex-center;
+
+		padding: rem(45) rem(35);
+
+		border-radius: rem(15);
+		backdrop-filter: blur(#{rem(35)});
+
+		column-gap: rem(22);
+
+		@include laptop {
+			column-gap: rem(10);
+		}
+	}
+
+	&__image {
+		min-width: fluid(60, 10);
+
+		width: fluid(70, 10);
+		height: fluid(70, 10);
+
+		@include flex-center;
+
+		@include mobile {
+			min-width: rem(35);
+
+			width: rem(35);
+			height: rem(35);
+		}
+	}
+	
+	&__name {
+		@include fluid-text(35, 15);
+
+		font-weight: 900;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+
+		@include mobile {
+			font-size: rem(20);
+		}
+	}
+}
+
+.SocialItem {
+		min-width: rem(330);
+		
+		@include flex-center;
+
+		border-radius: rem(15);
+
+		&__vk {
+			.SocialSection__name {
+				background: linear-gradient(180deg, #fff 17%, #d3e8ff 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			background-color: #2F90FF15;
+			border-bottom: rem(8) solid #0078ff;
+
+			@include hover {
+				background-color: #2F90FF;
+			}
+		}
+
+		&__discord {
+			.SocialSection__name {
+				background: linear-gradient(180deg, #fff 0%, #e7e9ff 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			background-color: #5765FF15;
+			border-bottom: rem(8) solid #5765FF;
+
+			@include hover {
+				background-color: #5765FF;
+			}
+		}
+
+		&__youtube {
+			.SocialSection__name {
+				background: linear-gradient(180deg, #fff 0%, #ffdcdc 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			background-color: #FF404015;
+			border-bottom: rem(8) solid #FF4040;
+
+			@include hover {
+				background-color: #FF4040;
+			}
+		}
+
+		&__telegram {
+			.SocialSection__name {
+				background: linear-gradient(180deg, #fff 0%, #daf2ff 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			background-color: #54C4FF15;
+			border-bottom: rem(8) solid #54C4FF;
+
+			@include hover {
+				background-color: #54C4FF;
+			}
+		}
+
+		@include hover {
+			border-bottom: rem(8) solid var(--color-light);
+			transition: var(--transition-duration) ease-in all;
+		}
+}

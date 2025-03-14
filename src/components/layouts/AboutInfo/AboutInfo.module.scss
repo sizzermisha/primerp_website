@@ -1,0 +1,180 @@
+@use '/src/app/styles/helpers' as *;
+
+.AboutInfo {
+	display: flex;
+	flex-direction: column;
+
+	align-items: end;
+	justify-content: center;
+
+	position: relative;
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(15);
+
+		align-items: end;
+		z-index: 1;
+
+		@include laptop-above {
+			position: absolute;
+			top: fluid(330, 220);
+		}
+
+		@include laptop {
+			max-width: 50%;
+			justify-content: center;
+			align-items: start;
+			height: 100%;
+		}
+
+		@include mobile-s {
+			max-width: calc(var(--container-big-width) + var(--container-small-width) * 2);
+			justify-content: center;
+			align-items: center;
+
+			row-gap: rem(5);
+			padding-block: fluid(50, 20);
+		}
+	}	
+
+	&__title {
+		color: var(--color-light);
+		text-transform: uppercase;
+		text-align: end;
+
+		line-height: 92%;
+		
+		text-shadow: 0 0 rem(38) 0 rgba(0, 0, 0, 0.65);
+
+		@include laptop {
+			margin-top: rem(12);
+			width: 100%;
+			text-align: start;
+		}
+
+		@include mobile-s {
+			margin-top: rem(-50);
+			text-align: center;
+		}
+	}
+
+	&__description {
+		display: flex;
+
+		font-size: fluid(17, 8);
+		text-align: end;
+
+		@include color-gradient;
+		
+		@include laptop {
+			text-align: start;
+		}
+
+		@include mobile-s {
+			text-align: center;
+		}
+	}
+
+	&__imageContainer {
+		// position: relative;
+		--sizeAboutImageCircle: #{rem(590)};
+
+		&::before {
+			content: '';
+			position: absolute;
+			
+			@include abs-center;
+			
+			width: var(--sizeAboutImageCircle);
+			height: var(--sizeAboutImageCircle);
+
+			border: rem(2) solid rgba(255, 255, 255, 0.15);
+
+			border-radius: 50%;
+			z-index: -1;
+
+			@include laptop {
+				--sizeAboutImageCircle: #{rem(400)};
+				left: 15%;
+			}			
+
+			@include tablet {
+				--sizeAboutImageCircle: #{rem(300)};
+				left: 15%;
+			}
+
+			@include mobile-s {
+				--sizeAboutImageCircle: #{rem(300)};
+
+				@include abs-center;
+			}
+		}
+		&::after {
+			--sizeAboutImageCircle: #{rem(440)};
+
+			content: '';
+			position: absolute;
+			
+			@include abs-center;
+
+			width: var(--sizeAboutImageCircle);
+			height: var(--sizeAboutImageCircle);
+
+			border: rem(2) solid rgba(255, 255, 255, 0.15);
+
+			border-radius: 50%;
+			z-index: -1;
+
+			@include laptop {
+				--sizeAboutImageCircle: #{rem(250)};
+				left: 15%;
+			}
+
+			@include tablet {
+				--sizeAboutImageCircle: #{rem(200)};
+				left: 15%;
+			}
+			
+			@include mobile-s {
+				--sizeAboutImageCircle: #{rem(225)};
+
+				@include abs-center;
+			}
+		}
+	}
+
+	&__image {
+		object-fit: cover;
+		object-position: center;
+	}
+
+	@include laptop-above {
+		grid-area: info;
+	}
+
+	@include laptop {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: start;
+	}
+
+	@include mobile-s {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&__arrowCircle {
+			position: absolute;
+			top: 30%;
+
+			&_left {
+				left: 0;
+			}
+			&_right {
+				right: 0;
+			}
+		}
+	}
+}

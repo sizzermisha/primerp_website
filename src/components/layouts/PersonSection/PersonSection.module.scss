@@ -1,13 +1,6 @@
 @use '/src/app/styles/helpers' as *;
 
 .PersonSection {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding-top: rem(55);
-
-
 	&__inner {
 		display: flex;
 		flex-direction: column;
@@ -16,7 +9,7 @@
 		row-gap: rem(27);
 
 		@include tablet {
-			row-gap: rem(0);
+			row-gap: rem(18);
 		}
 	}
 
@@ -52,28 +45,32 @@
 	}
 
 	&__listCharacter {
+		width: 100%;
+		
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		column-gap: rem(10);
 
-		padding: rem(15);
-
 		@include tablet {
 			display: grid;
+			grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+			gap: rem(10);
+		}
+
+		@include mobile {
+			gap: rem(5);
 			grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-			gap: rem(15);
 		}
 		
-		@include mobile {
+		@include mobile-s {
 			display: flex;
 			flex-direction: column;
 			row-gap: rem(6);
 		}
 	}
-	
 
-	@include laptop {
-		padding-top: rem(55);
+	@include laptop-above {
+		grid-area: person;
 	}
 }

@@ -44,10 +44,6 @@
 		width: var(--iconSize);
 		height: var(--iconSize);
 
-		@include tablet {
-			--iconSize: #{rem(17)};
-		}
-
 		position: relative;
 
 		display: flex;
@@ -57,6 +53,10 @@
 		border-radius: 50%;
 		border: rem(1) solid #ffffff15;
 		z-index: 1;
+
+		@include tablet {
+			--iconSize: #{rem(17)};
+		}
 	}
 
 	&__imageContainer::before {

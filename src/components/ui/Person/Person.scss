@@ -9,6 +9,9 @@
 		left: 0;
 	}
 
+	@include mobile {
+		object-position: center;
+	}
 }
 
 #person_2 {
@@ -17,7 +20,10 @@
 	}
 
 	@include tablet {
-		left: rem(15);
+		position: absolute;
+		object-position: center;
+		top: rem(-15);
+		left: rem(-5);
 	}
 }
 

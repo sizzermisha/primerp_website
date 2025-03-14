@@ -23,6 +23,7 @@ export default function Header() {
                 />
 
                 <nav className={styles.Header__navigation}>
+									
                     <ul className={styles.Header__list}>
                         {dataNavigation.map((value) => (
                             <li key={value.key}>

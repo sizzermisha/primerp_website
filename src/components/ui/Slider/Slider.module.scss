@@ -1,0 +1,64 @@
+@use '/src/app/styles/helpers' as *;
+
+.Slider {
+	display: flex;
+	gap: rem(7);
+	
+	// &__button {
+	// 	@include flex-center;
+		
+	// 	background-color: #13131375;
+	// 	backdrop-filter: blur(#{rem(23)});
+	// 	box-shadow: 0 0 fluid(40, 20) 0 rgba(0, 0, 0, 0.35);
+
+	// 	outline: none;
+	// 	padding: fluid(17, 10);
+
+	// 	border-radius: rem(100);
+
+	// 	&[disabled] {
+	// 		opacity: 75%;
+	// 		cursor: default;
+	// 	}
+
+	// 	&:not(&[disabled]) {
+	// 		@include hover {
+	// 			background: var(--color-light);
+				
+	// 			.Slider__arrow {
+	// 				color: var(--color-dark);
+	// 				fill: var(--color-dark);
+	// 			} 
+	// 		}
+	// 	}
+	// }
+
+	&__info {
+		@include flex-center;
+
+		max-width: fluid(93, 50);
+		padding: fluid(17, 10) fluid(55, 25);
+
+		color: white;
+		font-weight: 500;
+		font-size: fluid(16,8);
+		text-wrap: nowrap;
+
+		background-color: #13131375;
+		backdrop-filter: blur(#{rem(23)});
+
+		border-radius: rem(100);
+
+		@include laptop {
+			background-color: #131313;
+		}
+	}
+	
+	// &__arrow {
+	// 	color: var(--color-light);
+	// }
+	// &__svgIcon {
+	// 	width: fluid(23, 16);
+	// 	height: fluid(22, 15);
+	// }
+}

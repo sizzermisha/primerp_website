@@ -2,9 +2,6 @@
 
 
 .Person {
-	display: flex;
-	justify-content: center;
-
 	transform: skewX(-3deg);
 	overflow: hidden;
 	border-radius: rem(17);
@@ -13,7 +10,7 @@
 		display: flex;
 		flex-direction: column;
 	
-		background: url('/src/assets/images/bg_role_person.jpg');
+		background: url('/images/bg_role_person.jpg');
 		background-repeat: no-repeat;
 		background-position: calc(var(--count-index) * 16.67%) center;
 		border-radius: rem(17);
@@ -28,15 +25,11 @@
 
 		@include tablet-above {
 			@include hover {
-				background: url('/src/assets/images/bg_role_person.jpg');
+				background: url('/images/bg_role_person.jpg');
 				background-repeat: no-repeat;
 				background-position: calc(var(--count-index) * 16.67%) center;
 	
 				z-index: 2;
-	
-				// outline: rem(3) solid var(--color-main);
-				// outline-offset: rem(-5);
-				// transition: 200ms ease-in outline;
 	
 				filter: grayscale(0);
 				transition: 200ms ease-in transform;
@@ -103,6 +96,7 @@
 			background-position: center calc(var(--count-index) * 16.67%);
 			justify-content: center;
 			align-items: center;
+			padding: rem(5);
 		}
 	}
 
@@ -125,9 +119,16 @@
 			top: 0;
 			left: 0;
 		}
+
+		@include mobile-s {
+			width: rem(150);
+			height: rem(150);
+		}
 	}
 
 	&__container {
+		--sizeContainerPerson: #{rem(70)};
+
 		position: relative;
 
 		display: flex;
@@ -135,10 +136,14 @@
 		align-items: center;
 
 		@include tablet {
-			min-width: rem(90);
+			min-width: var(--sizeContainerPerson);
 
-			width: rem(90);
-			height: rem(90);
+			width: var(--sizeContainerPerson);
+			height: var(--sizeContainerPerson);
+		}
+
+		@include mobile-s {
+			--sizeContainerPerson: #{rem(90)};
 		}
 	}
 
@@ -193,6 +198,9 @@
 		@include mobile {
 			font-size: rem(6);
 		}
+		@include mobile-s {
+			font-size: rem(7);
+		}
 	}
 
 	&__textName {
@@ -209,6 +217,10 @@
 
 		@include mobile {
 			font-size: rem(8);
+		}
+
+		@include mobile-s {
+			font-size: rem(9);
 		}
 	}
 

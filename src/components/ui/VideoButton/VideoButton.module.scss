@@ -1,0 +1,31 @@
+@use '/src/app/styles/helpers' as *;
+
+.VideoButton {
+	@include flex-center;
+
+	font-size: fluid(15, 6);
+	font-weight: 600;
+
+	column-gap: rem(8);
+	
+	color: var(--color-light);
+	text-align: start;
+	text-transform: uppercase;
+	line-height: 102%;
+
+	padding: fluid(5) fluid(30, 15);
+	background-color: rgba(0,0,0,0.55);
+	backdrop-filter: blur(#{rem(8.5)});
+	border-radius: rem(100);
+
+	@include mobile {
+		font-size: fluid(12, 6);
+		column-gap: rem(4);
+	}
+
+	@include hover {
+		transform: scale(1.2);
+		transition: var(--transition-duration) ease-in-out transform;
+		box-shadow: inset 0 rem(2) rem(5) 0 rgba(255, 255, 255, 0.15);
+	}
+}

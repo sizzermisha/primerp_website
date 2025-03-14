@@ -11,9 +11,10 @@ export const ConstantContext = createContext<IConstantContext | undefined>(undef
 const ConstantProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 	const [constantValue, setConstantValue] = useState<WindowSizeContext>({
 		mobile: 767.98,
-		tablet: 1024.98,
-		laptop: 1440.98,
-		desktop: 1920.98
+		tablet: 1023.98,
+		laptop: 1439.98,
+		desktop: 1919.98,
+		mobile_s: 479.98
 	});
 
 	return (

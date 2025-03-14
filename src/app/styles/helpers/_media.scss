@@ -1,10 +1,10 @@
 @use 'functions' as *;
 
-$desktop: 1920.98;
-$laptop: 1440.98;
-$tablet: 1024.98;
+$desktop: 1919.98;
+$laptop: 1439.98;
+$tablet: 1023.98;
 $mobile: 767.98;
-$mobile-s: 480.98;
+$mobile-s: 479.98;
 
 @mixin desktop {
 	@media (width <= rem($desktop)) {
