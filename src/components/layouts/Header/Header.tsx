@@ -42,7 +42,7 @@ export default function Header() {
                         ))}
                     </ul>
 
-                    <div className={styles.Header__listButton}>
+                    {/* <div className={styles.Header__listButton}>
                         <NavigationButton
                             icon={'language.svg'}
                             name='Сменить язык'
@@ -53,7 +53,7 @@ export default function Header() {
                             name='Пополнение счёта'
                             linkButton='/donate'
                         />
-                    </div>
+                    </div> */}
                 </nav>
 
                 <div className='visible-mobile'>

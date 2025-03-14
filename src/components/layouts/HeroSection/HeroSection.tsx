@@ -1,3 +1,4 @@
+import { dataSocial } from '../../../models/dataSocial';
 import HeroButton from '../../ui/HeroButton/HeroButton';
 import styles from './HeroSection.module.scss';
 
@@ -18,7 +19,9 @@ const HeroSection: React.FC = () => {
 					</p>
 				</header>
 
-				<HeroButton name='Следить за новостями' />
+				<a href={dataSocial[0].href} target='_blank'>
+					<HeroButton name='Следить за новостями' />
+				</a>
 			</div>
 		</section>
 	)
