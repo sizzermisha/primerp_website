@@ -1,9 +1,15 @@
 @use '/src/app/styles/helpers' as *;
 
 .SocialSection {
-	margin-top: rem(50);
+	padding-block: rem(50);
+
 	&__inner {
 		padding-block: rem(25);
+
+		@include mobile-s {
+			display: flex;
+			justify-content: center;
+		}
 	}
 
 	&__list {
@@ -24,7 +30,6 @@
 	}
 
 	&__link {
-		max-width: rem(370);
 
 		@include flex-center;
 

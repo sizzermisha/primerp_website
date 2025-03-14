@@ -10,6 +10,7 @@ import './App.scss';
 import SliderProvider from '../components/contexts/SliderContext';
 import AboutInfo from '../components/layouts/AboutInfo/AboutInfo';
 import SocialSection from '../components/layouts/SocialSection/SocialSection';
+import AnswersSection from '../components/layouts/AnswersSection/AnswersSection';
 
 export default function App() {
     return (
@@ -30,6 +31,7 @@ export default function App() {
                 </AboutSection>
 
 								<SocialSection />
+								<AnswersSection />
             </main>
 
             <Footer />

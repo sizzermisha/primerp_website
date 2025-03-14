@@ -1,0 +1,87 @@
+@use '/src/app/styles/helpers' as *;
+
+.AnswersSection {
+	display: flex;
+	justify-content: center;
+	
+	background-image: 
+		linear-gradient(180deg, var(--color-dark) 0%, var(--color-dark) 0.01%, rgba(9, 9, 9, 0.9) 45.5%, var(--color-dark) 100%),
+		url('/images/persons_and_car.jpg');
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	&__inner {
+		width: 100%;
+		
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(25);
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		justify-items: center;
+		align-items: center;
+		column-gap: rem(30);
+
+		@include mobile {
+			column-gap: 0;
+			row-gap: rem(10);
+			flex-direction: column;
+		}
+	}
+
+	&__title {
+		@include flex-center;
+
+		color: var(--color-light);
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 95%;
+	}
+
+	&__circle {
+		width: rem(16);
+		height: rem(16);
+
+		background-color: var(--color-main);
+		border-radius: 50%;
+		outline: rem(5) solid #FF3E6835;
+
+		@include mobile-s {
+			@include visually-hidden;
+		}
+	}
+
+	&__list {
+		padding-bottom: rem(50);
+		list-style-type: none;
+
+		display: grid;
+		justify-content: center;
+
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem(21);
+
+		@include laptop {
+			gap: rem(14);
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+
+	}	
+	&__item {
+		display: flex;
+	}
+
+	&__info {
+		@include flex-center;
+		column-gap: rem(15);
+	}
+}
